@@ -1,6 +1,44 @@
 {
-    "name": "main",
+    "name": "Weakly labeled language classifier",
     "parameters": {},
+    "services": {
+        "streamlit": {
+            "binds": {
+                "/data": "/data",
+                "/project-dir": "/usr/src/app/src"
+            },
+            "command": "-c 'umask 002 && touch /usr/src/app/src/streamlit.py && streamlit run src/streamlit.py'",
+            "entrypoint": "bash",
+            "env_variables": {
+                "STREAMLIT_SERVER_BASE_URL_PATH": "$BASE_PATH_PREFIX_8501"
+            },
+            "image": "orchest/streamlit",
+            "name": "streamlit",
+            "ports": [
+                8501
+            ],
+            "preserve_base_path": true,
+            "scope": [
+                "interactive",
+                "noninteractive"
+            ]
+        },
+        "vscode": {
+            "binds": {
+                "/project-dir": "/home/coder/code-server"
+            },
+            "command": "-c 'umask 002 && code-server --auth none --bind-addr 0.0.0.0:8080 /home/coder/code-server'",
+            "entrypoint": "bash",
+            "image": "codercom/code-server:latest",
+            "name": "vscode",
+            "ports": [
+                8080
+            ],
+            "scope": [
+                "interactive"
+            ]
+        }
+    },
     "settings": {
         "auto_eviction": false,
         "data_passing_memory_size": "1GB"
@@ -19,8 +57,8 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    382.5,
-                    291.5
+                    391.5,
+                    217.5
                 ]
             },
             "parameters": {},
@@ -38,11 +76,13 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    67.5,
-                    291.5
+                    117.5,
+                    217.5
                 ]
             },
-            "parameters": {},
+            "parameters": {
+                "random_page_count": 50
+            },
             "title": "Fetch domains",
             "uuid": "84b0ee95-42a2-41b6-a229-c43a2d1e4188"
         },
@@ -59,8 +99,8 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    704.5,
-                    292.5
+                    656.5,
+                    217.98254931714723
                 ]
             },
             "parameters": {},
