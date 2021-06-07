@@ -1,3 +1,8 @@
+import os
+
+# Temp hack
+os.system("pip install matplotlib")
+
 import pandas as pd
 import streamlit as st
 import matplotlib
