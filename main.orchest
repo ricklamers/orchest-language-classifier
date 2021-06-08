@@ -12,7 +12,7 @@
             "env_variables": {
                 "STREAMLIT_SERVER_BASE_URL_PATH": "$BASE_PATH_PREFIX_8501"
             },
-            "image": "orchest/streamlit",
+            "image": "environment@8eb8db33-25c5-4da6-b3b6-a0631d9d6546",
             "name": "streamlit",
             "ports": [
                 8501

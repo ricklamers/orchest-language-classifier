@@ -1,0 +1,1 @@
+{"language": "python", "base_image": "orchest/streamlit", "gpu_support": false, "uuid": "8eb8db33-25c5-4da6-b3b6-a0631d9d6546", "name": "Streamlit"}
